@@ -35,8 +35,8 @@ class TrajectoryDataset(Dataset):
         # Pad the positions sequence
         padded_positions = self.pad_sequence(positions)
 
-        # Generate the target, which is the next node in the sequence
-        target = trajectory[1:] + [-1] * (self.max_seq_len - len(trajectory))  # Targets are padded with -1
+        # Generate the target, which is the next node in the sequence (same length as input)
+        target = trajectory[1:] + [-1] * (self.max_seq_len - len(trajectory) + 1)  # Targets padded to match input length
 
         # Convert to tensor: input is positions, target is the next node sequence
-        return torch.tensor(padded_positions, dtype=torch.float32), torch.tensor(target, dtype=torch.long)
+        return torch.tensor(padded_positions, dtype=torch.float32), torch.tensor(target[:self.max_seq_len], dtype=torch.long)

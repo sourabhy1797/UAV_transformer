@@ -6,9 +6,6 @@ model:
   dropout: 0.1          # Dropout rate
 
 training:
-  batch_size: 32
+  batch_size: 1
   epochs: 10
   learning_rate: 1e-4
-
-environment:
-  num_gpus: 4           # Number of GPUs to use (1 to 4)

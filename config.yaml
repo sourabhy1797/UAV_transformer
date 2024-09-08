@@ -1,0 +1,14 @@
+model:
+  input_dim: 3          # Number of input features (x, y, z)
+  embed_dim: 128        # Embedding dimension for (x, y, z) positions
+  num_heads: 8          # Number of attention heads in the transformer
+  num_layers: 4         # Number of transformer layers
+  dropout: 0.1          # Dropout rate
+
+training:
+  batch_size: 32
+  epochs: 10
+  learning_rate: 1e-4
+
+environment:
+  num_gpus: 4           # Number of GPUs to use (1 to 4)

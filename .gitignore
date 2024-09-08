@@ -1,0 +1,8 @@
+__pycache__/
+config.yaml
+test_env/
+st_traj/*.npy
+st_traj/tree.csv
+visualize/*.html
+cache/
+output/
